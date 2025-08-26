@@ -15,7 +15,8 @@ const status = document.getElementById('status');
 
 // Register known faces here
 const knownFaces = [
-  { name: 'Alice', imgPath: 'students/alice.jpg' },
+  { name: 'Bhuvana', imgPath: 'students/Bhuvana.jpg' },
+  { name: 'Vyshu', imgPath: 'students/Vyshu.jpg' },
   // Add more students here
 ];
 
