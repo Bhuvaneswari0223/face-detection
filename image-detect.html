@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Face Detection App</title>
+  <script defer src="https://unpkg.com/face-api.js"></script>
+</head>
+<body>
+  <h1>Face Detection in Browser</h1>
+  <input type="file" id="imageUpload" accept="image/*">
+  <br>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const imageUpload = document.getElementById('imageUpload');
+
+    Promise.all([
+      faceapi.nets.tinyFaceDetector.loadFromUri('/models')
+    ]).then(start);
+
+    function start() {
+      imageUpload.addEventListener('change', async () => {
+        const image = await faceapi.bufferToImage(imageUpload.files[0]);
+        const canvas = document.getElementById('canvas');
+        canvas.width = image.width;
+        canvas.height = image.height;
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(image, 0, 0);
+
+        const detections = await faceapi.detectAllFaces(image, new faceapi.TinyFaceDetectorOptions());
+        detections.forEach(d => {
+          const { x, y, width, height } = d.box;
+          ctx.strokeStyle = 'red';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(x, y, width, height);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
