@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Face Login</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #fff; text-align: center; }
+    video, canvas { border-radius: 10px; margin-top: 20px; }
+    #status { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h1>Student Face Login</h1>
+  <video id="video" width="720" height="560" autoplay muted></video>
+  <div id="status">Loading models...</div>
+
+  <!-- EmailJS SDK -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- face-api.js -->
+  <script defer src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <!-- Your custom script -->
+  <script defer src="script.js"></script>
+</body>
+</html>
