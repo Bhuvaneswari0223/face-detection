@@ -2,23 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Student Face Login</title>
+  <title>Student Face Login | VIT-AP University</title>
   <style>
-    body { font-family: sans-serif; background: #111; color: #fff; text-align: center; }
-    video, canvas { border-radius: 10px; margin-top: 20px; }
-    #status { margin-top: 20px; font-size: 18px; }
+    /* Remove all default margins and paddings */
+body, html {
+  margin: 0;
+  padding: 0;
+  background: white;
+  text-align: center;
+}
+
+/* Header with no padding or margin */
+header {
+  margin: 0;
+  background: white;
+}
+
+/* Make logo as large as possible */
+header img {
+  margin: 0 auto;
+  max-width: 200px;
+  width:auto; /* Full width of the container */
+  height: auto; /* Keep aspect ratio */
+  display: block; /* Remove inline gaps */
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* Remove any margin from h1 and below */
+h1 {
+  margin-top: 0; /* small space, change as needed */
+    font-size: 28px;
+    color:rgb(48, 47, 47);
+    
+}
+
+/* Video styling */
+video {
+  padding:0;
+ margin-top: 0;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 7px 15px rgba(0,0, 0, 0.6);;
+}
+
+    #status {
+      margin-top: 20px;
+      font-size: 18px;
+      color:#080;
+    }
   </style>
 </head>
 <body>
-  <h1>Student Face Login</h1>
-  <video id="video" width="720" height="560" autoplay muted></video>
+  <!-- Header with Logo -->
+  <header>
+    <img src="assets/vitap-logo.png" alt="VIT-AP University Logo">
+  </header>
+
+  <!-- Title -->
+  <h1>STUDENT FACE LOGIN</h1>
+  <div class="security">
+<h4>🔐Security Notice</h4>
+<p>&bull; Your facial data is processed securely in compliance with VIT-AP's data privacy policies and applicable regulations.</p>
+<p>&bull; All login attempts are monitored for academic integrity.</p>
+</div>
+
+  <!-- Webcam Feed -->
+  <video id="video" width="600" height="450" autoplay muted></video>
+  
+  <!-- Status Message -->
   <div id="status">Loading models...</div>
 
-  <!-- EmailJS SDK -->
+  <!-- Scripts -->
   <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <!-- face-api.js -->
   <script defer src="https://unpkg.com/face-api.js@0.22.2/dist/face-api.min.js"></script>
-  <!-- Your custom script -->
   <script defer src="script.js"></script>
+  <footer>
+<p>Copyright © 2025 Software development cell, VIT-AP University,Andhra Pradesh-522241</p>
+<p>Powered by VIT Smart Attendance System (VSAS)</p>
+</footer>
+
 </body>
 </html>

@@ -148,6 +148,7 @@ async function runFaceDetection() {
     }
   }, 1000);
 }
+
 async function main() {
   await loadModels();
   status.textContent = 'Models loaded. Starting camera...';
